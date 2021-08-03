@@ -18,10 +18,13 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate(); // just by going to the login page the user is logged out :-) 
+     
         
         Cookie[] cookies = request.getCookies();
         String email = CookieUtil.getCookieValue(cookies, "email");
         request.setAttribute("email", email);
+        
+     
         
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
@@ -29,6 +32,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
+       
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
@@ -55,5 +60,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             response.sendRedirect("notes");
         }
+        
+     
     }
 }
