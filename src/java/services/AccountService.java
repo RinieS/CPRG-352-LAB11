@@ -17,10 +17,10 @@ public class AccountService {
             if (password.equals(user.getPassword())) {
                 Logger.getLogger(AccountService.class.getName()).log(Level.INFO, "Successful login by {0}", email);
                 
-                /*
+                
                 String body = "Successful login by " + user.getFirstName() + " on " + (new java.util.Date()).toString();
                 GmailService.sendMail(email, "Successful Login", body, false);
-                */
+                
                 
                 /*
                 String to = user.getEmail();
