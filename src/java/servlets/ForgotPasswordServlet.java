@@ -47,6 +47,7 @@ public class ForgotPasswordServlet extends HttpServlet {
        catch (Exception e){
            
        }
+        //send user back to login page
         response.sendRedirect("login");
         }
         
